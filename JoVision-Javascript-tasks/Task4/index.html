@@ -1,1 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sum of Numbers</title>
+  <style>
+    #result {
+      font-size: 20px;
+      color: green;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="clickBtn">Click me</button>
+  <div id="result"></div>
+
+  <script>
+    document.getElementById("clickBtn").addEventListener("click", function () {
+      // Task 4 - Create an array of numbers from 0 to 100 and sum them
+      let numbers = [];
+      for (let i = 0; i <= 100; i++) {
+        numbers.push(i);
+      }
+
+      let sum = 0;
+      for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+      }
+
+      document.getElementById("result").textContent = "Sum of numbers from 0 to 100 is: " + sum;
+    });
+  </script>
+
+</body>
+</html>
 
