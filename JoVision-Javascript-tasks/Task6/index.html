@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 6 - Array Operations</title>
+  <style>
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="buttonOne()">Button One</button>
+  <button onclick="buttonTwo()">Button Two</button>
+  <button onclick="buttonThree()">Button Three</button>
+  <button onclick="buttonFour()">Button Four</button>
+  <button onclick="buttonFive()">Button Five</button>
+
+  <script>
+   
+    function createRange(start, end) {
+      let arr = [];
+      for (let i = start; i <= end; i++) {
+        arr.push(i);
+      }
+      return arr;
+    }
+
+  
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    function buttonOne() {
+      let arr = createRange(0, 100);
+      let filtered = arr.filter(num => num % 3 !== 0);
+      console.log("Button One (Remove divisible by 3):", filtered);
+    }
+
+ 
+    function buttonTwo() {
+      let arr = createRange(0, 100);
+      let extended = arr.concat(createRange(100, 150));
+      console.log("Button Two (Add 100–150):", extended);
+    }
+
+    function buttonThree() {
+      let arr = createRange(0, 100);
+      let modified = arr.map(num => num + 3);
+      console.log("Button Three (Add 3 to each):", modified);
+    }
+
+    
+    function buttonFour() {
+      let arr = createRange(0, 100);
+      let sliced = arr.slice(20, 41); // end index is exclusive
+      console.log("Button Four (Index 20–40):", sliced);
+    }
+
+ 
+    function buttonFive() {
+      let arr = createRange(0, 100);
+      shuffleArray(arr);
+      console.log("Button Five (Shuffled):", arr);
+      let sorted = [...arr].sort((a, b) => b - a);
+      console.log("Button Five (Sorted Descending):", sorted);
+    }
+  </script>
+
+</body>
+</html>
